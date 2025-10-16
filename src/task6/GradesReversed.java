@@ -32,14 +32,17 @@ public class GradesReversed {
         String so = "";
        for (String l : grades){
            String[] s = l.split(" ");
+
            String name = s[0].toLowerCase();
            String surname = s[1].toLowerCase();
            String subject = s[2].toLowerCase();
-           String grade = s[4];
-          so = String.join(";", name, surname, subject, grade);
+           String grade = gradeStringToInt(s[4]);
+          so = String.join(", ", name, surname, subject, grade);
+
           str.append(so);
+          str.append("; ");
        }
-       return so.toString();
+       return str.toString();
 
     }
 
